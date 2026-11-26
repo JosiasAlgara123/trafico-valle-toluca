@@ -1,1 +1,37 @@
+name: Recolector Trafico Toluca
 
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capturar-datos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install requests pytz
+
+      - name: Ejecutar script de trafico
+        env:
+          TOMTOM_API_KEY: ${{ secrets.TOMTOM_API_KEY }}
+        run: python recolector_toluca.py
+
+      - name: Guardar cambios en el CSV
+        run: |
+          git config --local user.email "bot@github.com"
+          git config --local user.name "Traffic Bot Toluca"
+          git add trafico_toluca.csv
+          git commit -m "Actualizacion automatica de trafico" || exit 0
+          git push
