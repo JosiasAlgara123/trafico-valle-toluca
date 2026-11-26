@@ -6,13 +6,19 @@ import pytz
 
 TOMTOM_API_KEY = os.environ.get("TOMTOM_API_KEY")
 
+# 17 nodos estratégicos de la Zona Metropolitana del Valle de Toluca
 NODOS_TOLUCA = [
     {"id": "TOLLOCAN_PILARES", "nombre": "Paseo Tollocan - Pilares", "lat": 19.2869, "lon": -99.6094},
     {"id": "TOLLOCAN_TERMINAL", "nombre": "Paseo Tollocan - Terminal", "lat": 19.2797, "lon": -99.6433},
     {"id": "TOLLOCAN_COLON", "nombre": "Paseo Tollocan - Paseo Colon", "lat": 19.2768, "lon": -99.6562},
     {"id": "TOLLOCAN_CRIN", "nombre": "Paseo Tollocan - Santa Elena / San Mateo", "lat": 19.2831, "lon": -99.5562},
+    {"id": "TOLLOCAN_COMONFORT", "nombre": "Paseo Tollocan - Comonfort", "lat": 19.2849, "lon": -99.6258},
+    {"id": "TORRES_PINO_SUAREZ", "nombre": "Solidaridad Las Torres - Pino Suarez", "lat": 19.2683, "lon": -99.6392},
+    {"id": "TORRES_TECNOLOGICO", "nombre": "Solidaridad Las Torres - Tecnologico", "lat": 19.2665, "lon": -99.5968},
+    {"id": "TORRES_DIAZ_MIRON", "nombre": "Solidaridad Las Torres - Diaz Miron", "lat": 19.2712, "lon": -99.6224},
     {"id": "LOPEZ_MATEOS_CU", "nombre": "Adolfo Lopez Mateos - CU", "lat": 19.2836, "lon": -99.6766},
     {"id": "LOPEZ_MATEOS_ZINA", "nombre": "Adolfo Lopez Mateos - Zinacantepec", "lat": 19.2858, "lon": -99.7135},
+    {"id": "CARRANZA_CU", "nombre": "Venustiano Carranza - CU / Vicente Guerrero", "lat": 19.2804, "lon": -99.6698},
     {"id": "PINO_SUAREZ_METEPEC", "nombre": "Pino Suarez - Limite Metepec", "lat": 19.2618, "lon": -99.6358},
     {"id": "MORELOS_CENTRO", "nombre": "Jose Maria Morelos - Centro", "lat": 19.2891, "lon": -99.6548},
     {"id": "BLVD_AEROPUERTO", "nombre": "Boulevard Aeropuerto - Plaza Sendero", "lat": 19.3039, "lon": -99.5750},
